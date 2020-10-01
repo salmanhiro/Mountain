@@ -18,11 +18,12 @@ import matplotlib.pyplot as plt
 # Ignore any warning messages
 warnings.filterwarnings('ignore')
 
-def show_face():
+'''def show_face():
     img = cv2.imread('mountain-chan.jpg')
+    
     plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     plt.axis('off')
-    plt.show()
+    plt.show()'''
 
 # Record audio and return it as a string
 def recordAudio():    
@@ -113,7 +114,8 @@ def getThings(text):
 
 while True:
     # Record the audio
-    show_face()
+    #show_face()
+
     text = recordAudio()
     response = '' #Empty response string
      
