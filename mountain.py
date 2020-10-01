@@ -1,5 +1,7 @@
 # Import the libraries
 # From https://medium.com/@randerson112358/build-a-virtual-assistant-using-python-2b0f78e68b94
+# GAN waifu: Gwern Branwen, https://www.thiswaifudoesnotexist.net/
+
 import speech_recognition as sr
 import os
 from gtts import gTTS
@@ -8,10 +10,19 @@ import warnings
 import calendar
 import random
 import wikipedia
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
 #from function import recordAudio, assistantResponse, wakeWord, getDate, greeting, getPerson
 
 # Ignore any warning messages
 warnings.filterwarnings('ignore')
+
+def show_face():
+    img = cv2.imread('mountain-chan.jpg')
+    plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+    plt.axis('off')
+    plt.show()
 
 # Record audio and return it as a string
 def recordAudio():    
@@ -36,8 +47,7 @@ def recordAudio():
 def assistantResponse(text):
     print(text)
     # Convert the text to speech
-    myobj = gTTS(text=text, lang='en', slow=False)
-    
+    myobj = gTTS(text=text, lang='en-gb', slow=False)
     # Save the converted audio to a file    
     myobj.save('assistant_response.mp3')
     # Play the converted file
@@ -103,6 +113,7 @@ def getThings(text):
 
 while True:
     # Record the audio
+    show_face()
     text = recordAudio()
     response = '' #Empty response string
      
@@ -148,6 +159,15 @@ while True:
             what = getThings(text)
             say = wikipedia.summary(what, sentences=1)
             response = response + ' ' + say
+        if ('run cifar training' in text):
+            os.system('')
+
+        if ('see you' in text):
+            say = 'have a good day'
+            response = response + ' ' + say
+            assistantResponse(response)
+            break
+            
        
        # Assistant Audio Response
         assistantResponse(response)
