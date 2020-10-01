@@ -9,53 +9,44 @@ import webbrowser
 import os
 import time
 import subprocess
-from ecapture import ecapture as ec
-import wolframalpha
 import json
 import requests
 
-engine=pyttsx3.init('nsss')
-voices=engine.getProperty('voices')
-engine.setProperty('voice','voices[0].id')
+backend = pyttsx3.init('nsss')
+voices = backend.getProperty('voices')
+backend.setProperty('voice','voices[0].id')
 
 def speak(text):
-    engine.say(text)
-    engine.runAndWait()
+    backend.say(text)
+    backend.runAndWait()
 
-def wishMe():
-    hour=datetime.datetime.now().hour
-    if hour>=0 and hour<12:
-        speak("Good Morning")
-        print("Good Morning")
-    elif hour>=12 and hour<18:
-        speak("Good Afternoon")
-        print("Good Afternoon")
+def greeting():
+    hour = datetime.datetime.now().hour
+    if hour >= 0 and hour < 12:
+        speak("Time to hurry")
+    elif hour >= 12 and hour < 18:
+        speak("Doing your work")
     else:
-        speak("Good Evening")
-        print("Good Evening")
+        speak("Get chill")
 
 def takeCommand():
-    r=sr.Recognizer()
+    r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("Listening...")
-        audio=r.listen(source)
+        print("Listen........")
+        audio = r.listen(source)
         try:
-            statement=r.recognize_google(audio,language='en')
-            print(f"user said:{statement}\n")
+            statement = r.recognize_google(audio,language='en')
+            print(f"You said, {statement}\n")
 
         except Exception as e:
-            speak("Pardon me, please say that again")
+            speak("Could you say again?")
             return "None"
         return statement
 
-speak("Hi! I am Mountain, your personal assistant")
-wishMe()
+speak("Hello! I am Mountain, your personal assistant")
+greeting()
 
-if __name__=='__main__':
-
-
+if __name__ == '__main__':
     while True:
-        speak("Tell me how can I help you now?")
-        statement = takeCommand().lower()
-        if statement==0:
-            continue
+        #os.system('open -a Terminal .')
+        
