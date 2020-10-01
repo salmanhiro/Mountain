@@ -1,5 +1,6 @@
-# Import the libraries
-# From https://medium.com/@randerson112358/build-a-virtual-assistant-using-python-2b0f78e68b94
+# Record audio and return it as a string
+
+
 import speech_recognition as sr
 import os
 from gtts import gTTS
@@ -8,12 +9,7 @@ import warnings
 import calendar
 import random
 import wikipedia
-#from function import recordAudio, assistantResponse, wakeWord, getDate, greeting, getPerson
 
-# Ignore any warning messages
-warnings.filterwarnings('ignore')
-
-# Record audio and return it as a string
 def recordAudio():    
     # Record the audio
     r = sr.Recognizer()
@@ -45,7 +41,7 @@ def assistantResponse(text):
 
 # A function to check for wake word(s)
 def wakeWord(text):
-    WAKE_WORDS = ['hey', 'okay'] 
+    WAKE_WORDS = ['hey mountain', 'okay mountain'] 
     text = text.lower()  # Convert the text to all lower case words
   # Check to see if the users command/text contains a wake word    
     for phrase in WAKE_WORDS:
@@ -73,6 +69,7 @@ def getDate():
    
     return 'Today is ' + weekday + ' ' + month_names[monthNum - 1] + ' the ' + ordinalNumbers[dayNum - 1] + '.'
 
+
 # Function to return a random greeting response
 def greeting(text):
     # Greeting Inputs
@@ -92,62 +89,3 @@ def getPerson(text):
  for i in range(0, len(wordList)):
    if i + 3 <= len(wordList) - 1 and wordList[i].lower() == 'who' and wordList[i + 1].lower() == 'is':
             return wordList[i + 2] + ' ' + wordList[i + 3]
-
-
-# Function to get a things name
-def getThings(text):
- wordList = text.split()# Split the text into a list of words     
- for i in range(0, len(wordList)):
-   if i + 3 <= len(wordList) - 1 and wordList[i].lower() == 'what' and wordList[i + 1].lower() == 'is':
-            return wordList[i + 2] + ' ' + wordList[i + 3]
-
-while True:
-    # Record the audio
-    text = recordAudio()
-    response = '' #Empty response string
-     
-    # Checking for the wake word/phrase
-    if (wakeWord(text) == True):
-         # Check for greetings by the user
-        response = response + greeting(text)
-         # Check to see if the user said date
-        if text == None:
-            print('none')
-        if ('date' in text):
-            get_date = getDate()
-            response = response + ' ' + get_date
-         # Check to see if the user said time
-        if ('time' in text):
-            now = datetime.datetime.now()
-            meridiem = ''
-            if now.hour >= 12:
-                meridiem = 'p.m' #Post Meridiem (PM)
-                hour = now.hour - 12
-            else:
-                meridiem = 'a.m'#Ante Meridiem (AM)
-                hour = now.hour
-           # Convert minute into a proper string
-            if now.minute < 10:
-                minute = '0'+str(now.minute)
-            else:
-                minute = str(now.minute)
-            response = response + ' '+ 'It is '+ str(hour)+ ':'+minute+' '+meridiem+' .'
-                
-        # Check to see if the user said 'who is'
-        if ('who is' in text):
-            person = getPerson(text)
-            wiki = wikipedia.summary(person, sentences=2)            
-            response = response + ' ' + wiki
-
-        # Check who created you 
-        if ('who create you' in text):
-            say = 'I am created by salman. He is a final year astrophysics student at ITB. '
-            response = response + ' ' + say
-
-        if ('what is' in text):
-            what = getThings(text)
-            say = wikipedia.summary(what, sentences=1)
-            response = response + ' ' + say
-       
-       # Assistant Audio Response
-        assistantResponse(response)
