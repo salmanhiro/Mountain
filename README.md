@@ -7,4 +7,8 @@ An AI personal assistant
 
 ![Mountain](output-onlinepngtools.png)
 
-Mountain was created as a development from [this tutorial](https://towardsdatascience.com/how-to-build-your-own-ai-personal-assistant-using-python-f57247b4494b) as a personal assistant aimed for computational mathematics task. 
+Mountain aims for a personal assistant aimed for computational mathematics task. 
+
+# Reference
+Mountain was inspired from [this tutorial](https://towardsdatascience.com/how-to-build-your-own-ai-personal-assistant-using-python-f57247b4494b)
+and developed for other task such as `machine learning` and `numerical simulation`.
