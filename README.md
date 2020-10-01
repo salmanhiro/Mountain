@@ -10,5 +10,4 @@ An AI personal assistant
 Mountain aims for a personal assistant aimed for computational mathematics task. 
 
 # Reference
-Mountain was inspired from [this tutorial](https://towardsdatascience.com/how-to-build-your-own-ai-personal-assistant-using-python-f57247b4494b)
-and developed for other task such as `machine learning` and `numerical simulation`.
+Mountain was inspired from [this tutorial](https://towardsdatascience.com/how-to-build-your-own-ai-personal-assistant-using-python-f57247b4494b) using library from [this tutorial](https://www.analyticsvidhya.com/blog/2020/09/ai-virtual-assistant-using-python/) and developed for other task such as `machine learning` and `numerical simulation`.
