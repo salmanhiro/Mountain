@@ -16,6 +16,7 @@ Mountain aims for a personal assistant aimed for computational mathematics task.
 - [ ] Run YOLO
 - [ ] Run agent-based game
 - [ ] Run a CNN-based search engine
+- [ ] Add BERT for sentence similarity command
 
 # Reference
 Mountain was inspired from [this tutorial](https://medium.com/@randerson112358/build-a-virtual-assistant-using-python-2b0f78e68b94), developed for tasks such as `machine learning` and `numerical simulation`.
