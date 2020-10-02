@@ -5,9 +5,9 @@ An AI personal assistant
 
 
 
-![Mountain](output-onlinepngtools.png)
+![Mountain](Mountain.png)
 
-Mountain aims for a personal assistant aimed for computational mathematics task. 
+Mountain is a personal assistant aimed for computational mathematics task. 
 
 # Checklist
 
