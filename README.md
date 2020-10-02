@@ -12,11 +12,15 @@ Mountain aims for a personal assistant aimed for computational mathematics task.
 # Checklist
 
 - [x] Basic task `time`, `date`, `wikipedia`, `creator`. 
-- [ ] Run ML classification task
+- [ ] Run ML classification task from CIFAR10
+- [ ] Run ML classification task from custom data
 - [ ] Run YOLO
 - [ ] Run agent-based game
 - [ ] Run a CNN-based search engine
 - [ ] Add BERT for sentence similarity command
+- [ ] Run numerical approximation
+- [ ] Solving partial derivative
+- [ ] N-body simulation (help I need GPU)
 
 # Reference
 Mountain was inspired from [this tutorial](https://medium.com/@randerson112358/build-a-virtual-assistant-using-python-2b0f78e68b94), developed for tasks such as `machine learning` and `numerical simulation`.
