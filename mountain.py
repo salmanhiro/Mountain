@@ -161,8 +161,10 @@ while True:
             what = getThings(text)
             say = wikipedia.summary(what, sentences=1)
             response = response + ' ' + say
+
         if ('run cifar training' in text):
-            os.system('')
+            say = 'Running CIFAR10 training using PyTorch'
+            os.system('python cifar.py')
 
         if ('see you' in text):
             say = 'have a good day'
