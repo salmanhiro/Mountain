@@ -12,7 +12,7 @@ Mountain is a personal assistant aimed for computational mathematics task.
 # Checklist
 
 - [x] Basic task `time`, `date`, `wikipedia`, `creator`. 
-- [ ] Run ML classification task from CIFAR10
+- [x] Run ML classification task from CIFAR10
 - [ ] Run ML classification task from custom data
 - [ ] Run YOLO
 - [ ] Run agent-based game
