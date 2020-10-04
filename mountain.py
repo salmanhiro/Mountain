@@ -13,36 +13,12 @@ import wikipedia
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+from record import recordAudio
 #from function import recordAudio, assistantResponse, wakeWord, getDate, greeting, getPerson
 
 # Ignore any warning messages
 warnings.filterwarnings('ignore')
 
-'''def show_face():
-    img = cv2.imread('mountain-chan.jpg')
-    
-    plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-    plt.axis('off')
-    plt.show()'''
-
-# Record audio and return it as a string
-def recordAudio():    
-    # Record the audio
-    r = sr.Recognizer()
-    with sr.Microphone() as source:  
-       print('Say something!')
-       audio = r.listen(source)
-    
-    # Speech recognition using Google's Speech Recognition
-    data = ''
-    try:
-        data = r.recognize_google(audio)
-        print('You said: ' + data)
-    except sr.UnknownValueError:
-        print('Google Speech Recognition could not understand')
-    except sr.RequestError as e:
-        print('Request error from Google Speech Recognition')
-    return data
 
 # Function to get the virtual assistant response
 def assistantResponse(text):
