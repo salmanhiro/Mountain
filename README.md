@@ -24,3 +24,6 @@ Mountain is a personal assistant aimed for computational mathematics task.
 
 # Reference
 Mountain was inspired from [this tutorial](https://medium.com/@randerson112358/build-a-virtual-assistant-using-python-2b0f78e68b94), developed for tasks such as `machine learning` and `numerical simulation`.
+
+# Availability
+In this development, this AI is available for `Mac OS`
